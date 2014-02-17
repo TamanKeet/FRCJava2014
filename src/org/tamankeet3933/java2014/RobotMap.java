@@ -19,6 +19,7 @@ public class RobotMap {
       ==================================== CONSTANTS =============================================
       ============================================================================================*/
     
+    //TODO: Change ultrasonic value accordingly
     public static final double ULTRASONIC_TO_INCHES = 1;
     
     /*===============================================================================================
@@ -35,12 +36,14 @@ public class RobotMap {
     private static final int ARM_PICKUP_MOTOR_PORT = 6;
     private static final int IMPULSER_MOTOR_PORT = 7;
     
+    
     //DIGITAL SENSORS
     
     private static final int[] LEFT_WHEEL_ENCODER_PORTS = {1, 2};
     private static final int[] RIGHT_WHEEL_ENCODER_PORTS = {3, 4};
     private static final int[] LEFT_SHOOTER_ENCODER_PORTS = {5, 6};
     private static final int[] RIGHT_SHOOTER_ENCODER_PORTS = {7, 8};
+    
     
     //ANALOGUE SENSORS
     

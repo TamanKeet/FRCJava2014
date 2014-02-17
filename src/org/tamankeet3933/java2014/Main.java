@@ -15,11 +15,10 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.tamankeet3933.java2014.commands.CommandBase;
 
 /**
- * The VM is configured to automatically run this class, and to call the
- * functions corresponding to each mode, as described in the IterativeRobot
- * documentation. If you change the name of this class or the package after
- * creating this project, you must also update the manifest file in the resource
- * directory.
+ * Robot class that runs by default throught the Virtual Machine. It manages commands, teleop and
+ * autonomous. All code runs from here
+ * @author Ricardo Delfin Garcia
+ * @version 1.0
  */
 public class Main extends IterativeRobot {
 

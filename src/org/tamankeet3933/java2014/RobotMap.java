@@ -9,12 +9,18 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 
 /**
- * The RobotMap is a mapping from the ports sensors and actuators are wired into
- * to a variable name. This provides flexibility changing wiring, makes checking
- * the wiring easier and significantly reduces the number of magic numbers
- * floating around.
+ * Class with constants, ports and motors.
+ * @author Ricardo Delfin Garcia, David Dominguez Moises, Mariana Vazquez and Ana Laura Garcia Rivera
+ * @version  1.1
  */
 public class RobotMap {
+    
+    /*============================================================================================
+      ==================================== CONSTANTS =============================================
+      ============================================================================================*/
+    
+    public static final double ULTRASONIC_TO_INCHES = 1;
+    
     /*===============================================================================================
       ======================================= PORTS =================================================
       ===============================================================================================*/

@@ -30,11 +30,21 @@ public class DriveSystem extends Subsystem {
         
     }
     
-    public void drive(int moveVal, int rotateVal)
+    /**
+     * Method to drive the robot with a move and rotate value. Currently, only passes de arguments
+     * to an arcadeDrive
+     * @param moveVal Magnitude of the movement vector
+     * @param rotateVal Angle (rotation) of the movement vector
+     */
+    public void drive(double moveVal, double rotateVal)
     {
         drive.arcadeDrive(moveVal, rotateVal);
     }
     
+    /**
+     * Gets the value of the distance with the ultrasonic
+     * @return The scaled value of the ultrasonic in metres (because no one likes imperial system)
+     */
     public double getUltrasonic()
     {
         return ultrasonic.getAverageVoltage() * RobotMap.ULTRASONIC_TO_INCHES;

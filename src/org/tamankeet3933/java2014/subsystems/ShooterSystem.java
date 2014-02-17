@@ -27,7 +27,7 @@ public class ShooterSystem extends Subsystem {
     /**
      * Default constructor
      */
-    ShooterSystem()
+    public ShooterSystem()
     {
         leftMotor = RobotMap.leftShooterMotor;
         rightMotor = RobotMap.rightShooterMotor;

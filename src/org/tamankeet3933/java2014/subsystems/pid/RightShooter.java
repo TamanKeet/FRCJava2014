@@ -10,33 +10,34 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import org.tamankeet3933.java2014.RobotMap;
 
 /**
- *
- * @author Ricardo Delfin
+ * Class for the PID controlled right shooter. ONLY used for the ShooterSystem class.
+ * @author Ricardo Delfin Garcia
+ * @version 1.0
  */
-public class LeftShooter extends PIDSubsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-    Victor motor = RobotMap.leftShooterMotor;
-    Encoder encoder = RobotMap.leftShooterEncoder;
+public class RightShooter extends PIDSubsystem
+{
+    Victor motor = RobotMap.rightShooterMotor;
+    Encoder encoder = RobotMap.rightShooterEncoder;
     
-    public LeftShooter()
+    public RightShooter()
     {
         super(2, 1, 1, 1);
         setAbsoluteTolerance(0.2);
         getPIDController().setContinuous(false);
     }
     
-
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+    public void initDefaultCommand()
+    {
+        
     }
 
-    protected double returnPIDInput() {
+    protected double returnPIDInput()
+    {
         return encoder.getRate();
     }
 
-    protected void usePIDOutput(double output) {
+    protected void usePIDOutput(double output)
+    {
         motor.pidWrite(output);
     }
 }

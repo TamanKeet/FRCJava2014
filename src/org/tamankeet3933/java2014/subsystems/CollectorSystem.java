@@ -10,6 +10,7 @@ import org.tamankeet3933.java2014.RobotMap;
 /**
  *
  * @author PACO
+ * @version  2.0
  */
 public class CollectorSystem extends Subsystem {
     //External use variables, used to feed the "setBar" method
@@ -21,7 +22,7 @@ public class CollectorSystem extends Subsystem {
     public final double SPEED = 0.4;
     
     
-    public boolean setBar(int finalPos){
+    public boolean setBar(double finalPos, double error){
         double realPos  = getPosition();
         double motionSpeed = SPEED;
         double diff = 0;
@@ -31,13 +32,21 @@ public class CollectorSystem extends Subsystem {
         }
         
         RobotMap.armMovementMotor.set(motionSpeed);
-        do{
-            diff = Math.abs(finalPos-getPosition());
-        }while(diff>0.03);
         
-        RobotMap.armMovementMotor.set(0);
+        diff = Math.abs(finalPos-getPosition());
         
-        return true;
+        if(diff  < error)
+        {
+            RobotMap.armMovementMotor.set(0);
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public void armPickup(double speed)
+    {
+        RobotMap.armPickupMotor.set(speed);
     }
     
     private double getPosition(){

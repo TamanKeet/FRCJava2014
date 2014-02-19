@@ -8,29 +8,42 @@ package org.tamankeet3933.java2014.commands.raw;
 import org.tamankeet3933.java2014.commands.CommandBase;
 
 /**
- *
- * @author david
+ * 
+ * This class moves the arm pick up system and the collector arm to three 
+ * different positions according to the user input.
+ * @author David Dominguez Moises
+ * @version 1.0
  */
 public class MoveCollector extends CommandBase {
     
+    // Stores the user input.
     int position;
+    
+    // Stores the desired position for the collector arm.
     double finalPosition;
+    
+    // Used to stop the program.
     boolean stop = false;
+    
+    // Range of error for the position of the collector arm.
     public final double ERROR = 0.01;
     
+    // Stores the user input in the variable position.
     public MoveCollector(int position) {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+
         this.position = position;
         requires(collectorSystem);
     }
 
-    // Called just before this Command runs the first time
+    // Sets the speed of the arm pick up system to 0.4 .
     protected void initialize() {
         collectorSystem.armPickup(0.4);
     }
 
-    // Called repeatedly when this Command is scheduled to run
+    /*
+       Analises the variable position and stores the correspondant position 
+       constant to the variable finalPosition and calls the method setBar with the variable finalPosition.
+    */
     protected void execute() {
          switch (position)
          {
@@ -49,19 +62,18 @@ public class MoveCollector extends CommandBase {
          stop = true;
     }
 
-    // Make this return true when this Command no longer needs to run execute()
+    // Returns true when the execute method ends.
     protected boolean isFinished() {
         return stop;
     }
 
-    // Called once after isFinished returns true
+    // Stops the arm pick up system.
     protected void end() {
         collectorSystem.armPickup(0.0);
         stop = false;
     }
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
+    // Calls the end method.
     protected void interrupted() {
         end();
     }

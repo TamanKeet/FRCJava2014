@@ -3,6 +3,7 @@ package org.tamankeet3933.java2014;
 import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Victor;
@@ -48,7 +49,8 @@ public class RobotMap {
     //ANALOGUE SENSORS
     
     static final int ARM_MOVEMENT_POSITION_SENSOR_PORT = 1;
-    static final int ULTRASONIC_PORT = 2;
+    static final int GYRO_PORT = 2;
+    static final int ULTRASONIC_PORT = 3;
     
     /*===============================================================================================
       ====================================== OBJECTS ================================================
@@ -70,5 +72,6 @@ public class RobotMap {
     public static Encoder rightShooterEncoder = new Encoder(RIGHT_SHOOTER_ENCODER_PORTS[0], RIGHT_SHOOTER_ENCODER_PORTS[1]);
     public static Potentiometer armMovementPositionSensor = new AnalogPotentiometer(ARM_MOVEMENT_POSITION_SENSOR_PORT);
     public static AnalogChannel ultrasonic = new AnalogChannel(ULTRASONIC_PORT);
+    public static Gyro gyro = new Gyro(GYRO_PORT);
     
 }

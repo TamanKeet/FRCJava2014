@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 package org.tamankeet3933.java2014.commands.raw;
-import org.tamankeet3933.java2014.commands.CommandBase;
 
 /**
  *
- * @author analauragarciarivera
+ * @author Mariana
  */
-public class StopShooter extends CommandBase {
+public class KickBall extends CommandBase {
+   private double speed; 
    private boolean stopped;
-    
-    public StopShooter(double speed) {
-        requires(shooterSystem);
-        this.stopped= true;
-        
+   public KickBall() {
+        requires(collectorSystem);
+        this.motionSpeed=speed;
+        this.stopped=false;
         
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -24,17 +23,16 @@ public class StopShooter extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        shooterSystem.stop();
-    }
-
+           armMovementMotor.start(speed);
+}
+    
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        stopped= true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return stopped; 
+        return stopped;
     }
 
     // Called once after isFinished returns true

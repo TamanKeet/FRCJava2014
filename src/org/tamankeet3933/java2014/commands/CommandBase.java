@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.tamankeet3933.java2014.OI;
 import org.tamankeet3933.java2014.subsystems.CollectorSystem;
 import org.tamankeet3933.java2014.subsystems.DriveSystem;
+import org.tamankeet3933.java2014.subsystems.KickerSystem;
 import org.tamankeet3933.java2014.subsystems.ShooterSystem;
 
 /**
@@ -20,6 +21,7 @@ public abstract class CommandBase extends Command {
     public ShooterSystem shooterSystem = new ShooterSystem();
     public DriveSystem driveSystem = new DriveSystem();
     public CollectorSystem collectorSystem = new CollectorSystem();
+    public KickerSystem kickerSystem = new KickerSystem();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely

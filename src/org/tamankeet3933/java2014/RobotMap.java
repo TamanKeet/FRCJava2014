@@ -48,9 +48,9 @@ public class RobotMap {
     
     //ANALOGUE SENSORS
     
-    static final int ARM_MOVEMENT_POSITION_SENSOR_PORT = 1;
-    static final int GYRO_PORT = 2;
-    static final int ULTRASONIC_PORT = 3;
+    private static final int ARM_MOVEMENT_POSITION_SENSOR_PORT = 1;
+    private static final int GYRO_PORT = 2;
+    private static final int ULTRASONIC_PORT = 3;
     
     /*===============================================================================================
       ====================================== OBJECTS ================================================
@@ -64,7 +64,7 @@ public class RobotMap {
     public static Victor rightShooterMotor = new Victor(RIGHT_SHOOTER_MOTOR_PORT);
     public static Victor armMovementMotor = new Victor(ARM_MOVEMENT_MOTOR_PORT);
     public static Talon armPickupMotor = new Talon(ARM_PICKUP_MOTOR_PORT);
-    public static Jaguar impulserMotor = new Jaguar(IMPULSER_MOTOR_PORT);
+    public static Talon impulserMotor = new Talon(IMPULSER_MOTOR_PORT);
     
     public static Encoder leftWheelEncoder = new Encoder(LEFT_WHEEL_ENCODER_PORTS[0], LEFT_WHEEL_ENCODER_PORTS[1]);
     public static Encoder rightWheelEncoder = new Encoder(RIGHT_WHEEL_ENCODER_PORTS[0], RIGHT_WHEEL_ENCODER_PORTS[1]);

@@ -1,14 +1,36 @@
 
 package org.tamankeet3933.java2014;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+    
+    //===================================================================================
+    //================================= JOYSTICKS =======================================
+    //===================================================================================
+    Joystick j1 = new Joystick(1);
+    Joystick j2 = new Joystick(2);
+    
+    //===================================================================================
+    //================================== BUTTONS ========================================
+    //===================================================================================
+    public Button fireButton = new JoystickButton(j1, 1);
+    public Button catchButton = new JoystickButton(j1, 5);
+    public Button passButton = new JoystickButton(j1, 4);
+    public Button pickUpBallButton = new JoystickButton(j1, 6);
+    
+    //===================================================================================
+    //=================================== AXIS ==========================================
+    //===================================================================================
+    public JoystickAxis driveX = new JoystickAxis(j1, 0.125, false, 1, false);
+    public JoystickAxis driveY = new JoystickAxis(j1, 0.125, false, 2, true);
+    
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -40,5 +62,10 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    
+    public OI()
+    {
+        
+    }
 }
 

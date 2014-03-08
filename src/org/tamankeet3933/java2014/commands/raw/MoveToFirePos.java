@@ -28,13 +28,15 @@ public class MoveToFirePos extends CommandBase {
 
     // Sets the speed of the chasis wheels to 0.5 .
     protected void initialize() {
+        
+        stopDriving = false;
         driveSystem.drive(.5, 0);
     }
 
     /* Ends the program when the robot is in the desired position,
        with an error range of 1.  */
     protected void execute() {
-        if (driveSystem.getUltrasonic() <= DISTANCE_TO_FIRE + 1 || driveSystem.getUltrasonic() >= DISTANCE_TO_FIRE - 1)
+        if (driveSystem.getUltrasonic() <= DISTANCE_TO_FIRE + 1 && driveSystem.getUltrasonic() >= DISTANCE_TO_FIRE - 1)
 	{
             stopDriving = true;
 	}
@@ -47,7 +49,6 @@ public class MoveToFirePos extends CommandBase {
     // Stops the robot.
     protected void end() {
         driveSystem.drive(0, 0);
-        stopDriving = false;
     }
 
     // Calls the end method.

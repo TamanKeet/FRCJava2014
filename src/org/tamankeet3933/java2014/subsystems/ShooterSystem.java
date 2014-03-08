@@ -31,8 +31,6 @@ public class ShooterSystem extends Subsystem {
     {
         leftMotor = RobotMap.leftShooterMotor;
         rightMotor = RobotMap.rightShooterMotor;
-        /*leftShooter = new LeftShooter();
-        rightShooter = new RightShooter();*/
     }
     
     public void initDefaultCommand() {
@@ -46,9 +44,6 @@ public class ShooterSystem extends Subsystem {
      */
     public void start(double speed)
     {
-        /*leftShooter.setSetpoint(speed);
-        rightShooter.setSetpoint(-speed);*/
-        
         //Needs to be inverted so both go in the same direction
         leftMotor.set(-speed);
         rightMotor.set(speed);
@@ -60,7 +55,5 @@ public class ShooterSystem extends Subsystem {
     public void stop()
     {
         start(0);
-        /*leftShooter.setSetpoint(0);
-        rightShooter.setSetpoint(0);*/
     }
 }

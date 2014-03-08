@@ -7,8 +7,9 @@ package org.tamankeet3933.java2014.commands.raw;
 import org.tamankeet3933.java2014.commands.CommandBase;
 
 /**
- *
- * @author analauragarciarivera
+ * Turn on the shooter with a specified speed
+ * @author Ana Laura Garcia Rivera
+ * @version 1.1
  */
 public class StartShooter extends CommandBase {
   
@@ -19,15 +20,11 @@ public class StartShooter extends CommandBase {
         requires(shooterSystem);
         this.speed = speed;
         this.stopped = false;
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis); 
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
         shooterSystem.start(speed);
-        
-       
     }
 
     // Called repeatedly when this Command is scheduled to run

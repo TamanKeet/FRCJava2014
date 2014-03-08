@@ -16,10 +16,6 @@ public class StopShooter extends CommandBase {
     public StopShooter(double speed) {
         requires(shooterSystem);
         this.stopped= true;
-        
-        
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time

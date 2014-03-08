@@ -18,14 +18,13 @@ public class KickBall extends CommandBase {
    private long maxTime;
    public KickBall(long time) {
         requires(collectorSystem);
-        this.timer = new RobotTimer();
-        this.counter = 0;
         this.maxTime = time;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        timer = new RobotTimer();
+        this.timer = new RobotTimer();
+        this.counter = 0;
         kickerSystem.kick();
 }
     

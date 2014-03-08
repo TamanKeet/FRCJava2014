@@ -9,7 +9,7 @@ package org.tamankeet3933.java2014;
  * @author PACO
  */
 public class Util {
-    public double deadCentre(double DC, double input,double absMaxValue){
+    public static double deadCentre(double DC, double input,double absMaxValue){
     	/*
     	Method to convert to give a joystick input value "input"
         A dead centre of the absolute value of +/- PM
@@ -57,7 +57,7 @@ public class Util {
         return temp*input;
     }
     
-    public double invert(double in){
+    public static double invert(double in){
         return in*-1;
     }
 }

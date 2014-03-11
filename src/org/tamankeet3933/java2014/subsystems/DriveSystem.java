@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.tamankeet3933.java2014.RobotMap;
+import org.tamankeet3933.java2014.commands.Drive;
 
 /**
  * Subsystem in charge of moving the chassis wheels.
@@ -28,7 +29,7 @@ public class DriveSystem extends Subsystem {
     }
     
     public void initDefaultCommand() {
-        
+        setDefaultCommand(new Drive());
     }
     
     /**

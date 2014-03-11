@@ -12,7 +12,7 @@ import org.tamankeet3933.java2014.commands.CommandBase;
  * This class moves the arm pick up system and the collector arm to three 
  * different positions according to the user input.
  * @author David Dominguez Moises
- * @version 1.0
+ * @version 1.1
  */
 public class MoveCollector extends CommandBase {
     
@@ -25,7 +25,7 @@ public class MoveCollector extends CommandBase {
     public double position;
     
     // Stores the user input in the variable position.
-    public MoveCollector(int position) {
+    public MoveCollector(double position) {
 
         requires(collectorSystem);
         this.position = position;

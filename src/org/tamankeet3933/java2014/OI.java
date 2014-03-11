@@ -4,6 +4,10 @@ package org.tamankeet3933.java2014;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.tamankeet3933.java2014.commands.CatchShooter;
+import org.tamankeet3933.java2014.commands.Fire;
+import org.tamankeet3933.java2014.commands.Pass;
+import org.tamankeet3933.java2014.commands.PickUpBall;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -24,6 +28,7 @@ public class OI {
     public Button catchButton = new JoystickButton(j1, 5);
     public Button passButton = new JoystickButton(j1, 4);
     public Button pickUpBallButton = new JoystickButton(j1, 6);
+    public Button catchDoneButton = new JoystickButton(j1, 2);
     
     //===================================================================================
     //=================================== AXIS ==========================================
@@ -65,7 +70,10 @@ public class OI {
     
     public OI()
     {
-        
+        fireButton.whenReleased(new Fire());
+        catchButton.whenReleased(new CatchShooter());
+        passButton.whenReleased(new Pass());
+        pickUpBallButton.whenReleased(new PickUpBall());
     }
 }
 

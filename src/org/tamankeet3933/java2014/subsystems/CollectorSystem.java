@@ -8,15 +8,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import org.tamankeet3933.java2014.RobotMap;
 
 /**
- *
- * @author PACO
+ * Collector system. Uses a potentiometer to measure the position of the arm
+ * @author Paco Huelsz Prince
  * @version  2.0
  */
 public class CollectorSystem extends Subsystem {
     //External use variables, used to feed the "setBar" method
-    public final double RETRACT = 1.0;
-    public final double EXTEND  = 1;
-    public final double STORAGE = 4.0;
+    public static final double RETRACT = 1.0;
+    public static final double EXTEND  = 1;
+    public static final double STORAGE = 4.0;
     
     //Internal use variables
     public final double SPEED = 0.4;

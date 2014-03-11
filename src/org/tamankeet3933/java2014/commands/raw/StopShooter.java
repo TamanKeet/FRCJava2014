@@ -7,13 +7,14 @@ package org.tamankeet3933.java2014.commands.raw;
 import org.tamankeet3933.java2014.commands.CommandBase;
 
 /**
- *
- * @author analauragarciarivera
+ * Command to stop the two shooter motors.
+ * @author Ana Laura Garcia Rivera
+ * @version 1.1
  */
 public class StopShooter extends CommandBase {
    private boolean stopped;
     
-    public StopShooter(double speed) {
+    public StopShooter() {
         requires(shooterSystem);
         this.stopped= true;
     }

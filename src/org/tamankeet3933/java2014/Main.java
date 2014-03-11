@@ -12,10 +12,11 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import org.tamankeet3933.java2014.commands.Autonomous;
 import org.tamankeet3933.java2014.commands.CommandBase;
 
 /**
- * Robot class that runs by default throught the Virtual Machine. It manages commands, teleop and
+ * Robot class that runs by default through the Virtual Machine. It manages commands, teleop and
  * autonomous. All code runs from here
  * @author Ricardo Delfin Garcia
  * @version 1.0
@@ -26,11 +27,11 @@ public class Main extends IterativeRobot {
 
     /**
      * This function is run when the robot is first started up and should be
-     * used for any initialization code.
+     * used for any initialisation code.
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        // autonomousCommand = new ExampleCommand();
+         autonomousCommand = new Autonomous();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -38,7 +39,7 @@ public class Main extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        // autonomousCommand.start();
+        autonomousCommand.start();
     }
 
     /**
@@ -53,7 +54,7 @@ public class Main extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        // autonomousCommand.cancel();
+        autonomousCommand.cancel();
     }
 
     /**

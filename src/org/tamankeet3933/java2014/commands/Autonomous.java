@@ -14,6 +14,7 @@ import org.tamankeet3933.java2014.commands.raw.MoveForwardAuto;
 public class Autonomous extends CommandGroup {
     
     public Autonomous() {
+        addSequential(new PickUpBall());
         addSequential(new MoveForwardAuto());
         addSequential(new Fire());
     }

@@ -23,7 +23,7 @@ public class Drive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        driveSystem.drive(oi.driveX.get(), oi.driveY.get());
+        driveSystem.drive(oi.driveY.get(), oi.driveX.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()

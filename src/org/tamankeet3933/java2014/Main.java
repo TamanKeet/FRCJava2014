@@ -9,10 +9,8 @@ package org.tamankeet3933.java2014;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.tamankeet3933.java2014.commands.Autonomous;
 import org.tamankeet3933.java2014.commands.CommandBase;
 
 /**
@@ -23,23 +21,22 @@ import org.tamankeet3933.java2014.commands.CommandBase;
  */
 public class Main extends IterativeRobot {
 
-    Command autonomousCommand;
-
+    //==========================================================================
+    //========================= Commands =======================================
+    //==========================================================================
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialisation code.
      */
     public void robotInit() {
-        // instantiate the command used for the autonomous period
-         autonomousCommand = new Autonomous();
-
         // Initialize all subsystems
         CommandBase.init();
     }
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        autonomousCommand.start();
+        CommandList.autonomousCommand.start();
     }
 
     /**
@@ -54,7 +51,12 @@ public class Main extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        autonomousCommand.cancel();
+        CommandList.autonomousCommand.cancel();
+        CommandList.catchShooterCommand.cancel();
+        CommandList.fireCommand.cancel();
+        CommandList.lowPassCommand.cancel();
+        CommandList.passCommand.cancel();
+        CommandList.pickUpBallCommand.cancel();
     }
 
     /**
@@ -62,6 +64,24 @@ public class Main extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        if(CommandBase.oi.abortButton.get())
+        {
+            if(CommandList.fireCommand.isRunning())
+                CommandList.fireCommand.cancel();
+            
+            if(CommandList.catchShooterCommand.isRunning())
+                CommandList.fireCommand.cancel();
+            
+            if(CommandList.passCommand.isRunning())
+                CommandList.passCommand.cancel();
+            
+            if(CommandList.pickUpBallCommand.isRunning())
+                CommandList.pickUpBallCommand.cancel();
+            
+            if(CommandList.lowPassCommand.isRunning())
+                CommandList.lowPassCommand.cancel();
+        }
     }
     
     /**

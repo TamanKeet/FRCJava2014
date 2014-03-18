@@ -4,14 +4,12 @@ package org.tamankeet3933.java2014;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import org.tamankeet3933.java2014.commands.CatchShooter;
-import org.tamankeet3933.java2014.commands.Fire;
-import org.tamankeet3933.java2014.commands.Pass;
-import org.tamankeet3933.java2014.commands.PickUpBall;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
+ * @author Taman Keet
+ * @version 1.0
  */
 public class OI {
     
@@ -24,11 +22,13 @@ public class OI {
     //===================================================================================
     //================================== BUTTONS ========================================
     //===================================================================================
-    public Button fireButton = new JoystickButton(j1, 1);
-    public Button catchButton = new JoystickButton(j1, 5);
-    public Button passButton = new JoystickButton(j1, 4);
-    public Button pickUpBallButton = new JoystickButton(j1, 6);
-    public Button catchDoneButton = new JoystickButton(j1, 2);
+    public Button fireButton = new JoystickButton(j2, 1);       // A
+    public Button catchButton = new JoystickButton(j2, 3);      // X
+    public Button passButton = new JoystickButton(j2, 10);      // Right Joystick Press
+    public Button pickUpBallButton = new JoystickButton(j2, 2); // B
+    public Button catchDoneButton = new JoystickButton(j2, 4);  // Y
+    public Button lowerPassButton = new JoystickButton(j2, 6);  // Left Bumper
+    public Button abortButton = new JoystickButton(j1, 6);      // Right Bumper
     
     //===================================================================================
     //=================================== AXIS ==========================================
@@ -70,10 +70,16 @@ public class OI {
     
     public OI()
     {
-        fireButton.whenReleased(new Fire());
-        catchButton.whenReleased(new CatchShooter());
-        passButton.whenReleased(new Pass());
-        pickUpBallButton.whenReleased(new PickUpBall());
+        
+    }
+    
+    public void initMap()
+    {
+        fireButton.whenReleased(CommandList.fireCommand);
+        catchButton.whenReleased(CommandList.catchShooterCommand);
+        passButton.whenReleased(CommandList.passCommand);
+        pickUpBallButton.whenReleased(CommandList.pickUpBallCommand);
+        lowerPassButton.whenReleased(CommandList.lowPassCommand);
     }
 }
 

@@ -43,7 +43,7 @@ public class MoveCollector extends CommandBase {
     */
     protected void execute() {
         
-         stop = collectorSystem.setBar(position, ERROR);
+         stop = collectorSystem.setBar(position);
     }
 
     // Returns true when the execute method ends.

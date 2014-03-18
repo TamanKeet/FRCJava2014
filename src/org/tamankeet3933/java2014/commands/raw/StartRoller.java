@@ -13,15 +13,17 @@ import org.tamankeet3933.java2014.commands.CommandBase;
 public class StartRoller extends CommandBase {
     
     private boolean finished;
+    private double speed;
     
-    public StartRoller() {
+    public StartRoller(double speed) {
         requires(collectorSystem);
         finished = false;
+        this.speed = speed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        collectorSystem.armPickup(1);
+        collectorSystem.armPickup(speed);
         finished = true;
     }
 

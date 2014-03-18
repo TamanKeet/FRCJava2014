@@ -72,7 +72,7 @@ public class RobotTimer
 	public boolean equals(Object objectTwo)
 	{
 		RobotTimer robotTime2 = (RobotTimer)objectTwo;
-		return robotTime2.toString() == toString();
+		return robotTime2.toString().equals(toString());
 	}
 	
 	public String toString()
